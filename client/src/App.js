@@ -2,6 +2,8 @@ import { Header } from "./components/Header";
 import './App.css';
 import { Footer } from "./components/Footer";
 import { Catalog } from "./components/Catalog";
+import { Register } from "./components/Register";
+import { Login } from "./components/Login";
 
 
 function App() {
@@ -13,6 +15,10 @@ function App() {
       <main>
 
           <Catalog/>
+
+          <Register/>
+
+          <Login/>
 
       </main>
 
