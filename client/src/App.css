@@ -59,3 +59,33 @@ body {
     text-align: center;
     font-size: 22px;
 }
+
+.catalog{
+    margin-top: 20px;
+    display: flex;
+}
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    min-width: 500px;
+    max-width: 700px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+  }
+  
+  
+  .card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 22px;
+  }
+  
+  .card button:hover {
+    opacity: 0.7;
+  }
