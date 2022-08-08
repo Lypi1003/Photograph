@@ -13,11 +13,14 @@ body {
     justify-content: space-between;
     align-items: center;
 }
+.search-container{
+    display: block;
+}
 .search-container input {
     float: left;
     padding: 10px 10px;
     margin-top: 0px;
-    margin-right: 16px;
+    margin-right: auto;
     background: white;
     font-size: 22px;
     border: none;
@@ -28,11 +31,12 @@ body {
     float: right;
     padding: 10px 10px;
     margin-top: 0px;
-    margin-right: 16px;
+    margin-right: auto;
     background: rgb(53, 230, 133);
     font-size: 22px;
     border: none;
     cursor: pointer;
+    border-radius: 16px;
 }
 
 #main {
@@ -112,7 +116,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     margin-top: auto;
-    margin-bottom: auto;
+    margin-bottom: 0;
     padding: 16px;
     width: 500px;
     position: center;
@@ -133,7 +137,7 @@ body {
     outline: none;
   }
 
-  .registerbtn {
+  .btn {
     background-color: #04AA6D;
     color: white;
     padding: 16px 20px;
@@ -143,8 +147,25 @@ body {
     width: 100%;
     opacity: 0.9;
     font-size: 25px;
+    border-radius: 16px;
   }
   
   .registerbtn:hover {
     opacity:1;
+  }
+
+  #category{
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    font-size: 20px;
+  }
+  #description{
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
   }

@@ -13,7 +13,7 @@ export const Login =() =>{
                     <input type="password" placeholder="Enter Password" name="psw" id="psw" required />
 
                     
-                    <button type="submit" class="registerbtn">Login</button>
+                    <button type="submit" class="btn">Login</button>
                 </div>
 
                 <div class="container signin">
