@@ -22,12 +22,11 @@ export const Home = () => {
 
             <div className="catalog">
                 {photos.length > 0
-                    ? photos.map(x => <HomeCard photo={x} />)
+                    ? photos.map(x => <HomeCard key={x._id} photo={x} />)
                     : <span className="no-posts">
                         <p>No Posts Yet!</p>
                     </span>
                 }
-
             </div>
         </>
 

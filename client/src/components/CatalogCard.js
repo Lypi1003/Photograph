@@ -7,14 +7,13 @@ export const CatalogCard = ({
         
         <div className="card" >
             <p>
-                <img src="https://thumbs.dreamstime.com/b/autumn-fall-nature-scene-autumnal-park-beautiful-77869343.jpg" alt="Denim" style={{ width: "100%" }} />
+                <img src={photo.img} alt="Denim" style={{ width: "100%" }} />
             </p>
-            <h1>Tailored Jeans</h1>
-            <h2>Category: Product</h2>
-            <p>Some text about the jeans..</p>
-            <p>Author: Lypi</p>
-            <p><button>Like</button></p>
-            <div>
+            <h1>{photo.title}</h1>
+            <h2>Category: {photo.category}</h2>
+            <p>{photo.description}</p>
+            <p><button className=" btn">Like</button></p>
+            <div className="btn">
                 <a href="#"> Details </a>
             </div>
         </div >
