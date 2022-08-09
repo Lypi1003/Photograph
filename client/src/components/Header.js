@@ -1,33 +1,33 @@
-
+import { Link } from 'react-router-dom';
 
 export const Header = () => {
     return (
 
-        <div className="header">
+        <header>
 
-            <h1 id="main">Photograph</h1>
-            <div className="search-container">
-                <form >
-                    <input type="text" placeholder="Search.." name="search"/>
-                        <button type="submit"><i>Submit</i></button>
-                </form>
-            </div>
+            <h1>
+                <Link className="home" to="/">
+                    Photograph
+                </Link>
+            </h1>
+           
+            <nav>
 
-            <nav id="navbar">
-                <ul>
+                <Link to="/catalog">Catalog</Link>
 
+                <div id="user">
+                    <Link to="/catalog/create">New Post</Link>
+                    <Link to="/profile">Profile</Link>
+                    <Link to="/logout">Logout</Link>
+                </div>
 
-                    <li><a href="/catalog">Catalog</a></li>
+                <div id="guest">
+                    <Link to="/login">Login</Link>
+                    <Link to="/register">Register</Link>
+                </div>
 
-                    <li><a href="/catalog/create">New Post</a></li>
-                    <li><a href="/profile">Profile</a></li>
-                    <li><a href="/auth/logout">Logout</a></li>
-
-                    <li><a href="/auth/login">Login</a></li>
-                    <li><a href="/auth/register">Register</a></li>
-                </ul>
             </nav>
-        </div>
+        </header>
 
     );
 }

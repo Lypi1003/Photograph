@@ -1,35 +1,36 @@
+import { Routes, Route } from 'react-router-dom'
+
 import { Header } from "./components/Header";
 import './App.css';
 import { Footer } from "./components/Footer";
 import { Catalog } from "./components/Catalog";
 import { Register } from "./components/Register";
 import { Login } from "./components/Login";
-import { NewPost } from "./components/NewPost";
-import {Home} from "./components/Home";
+import { Home } from './components/Home';
+import { NewPost } from './components/NewPost';
+
 
 function App() {
-  return (
-    <div >
+	return (
+		<div >
 
-      <Header />
+			<Header />
 
-      <main>
-          <Home/>
+			<main>
+				<Routes>
+					<Route path="/" element={<Home />} />
+					<Route path="/login" element={<Login />} />
+					<Route path="/register" element={<Register />} />
+					<Route path="/catalog" element={<Catalog />} />
+					<Route path="/catalog/create" element={<NewPost />} />
 
-          <Catalog/>
+				</Routes>
+			</main>
 
-          <Register/>
+			<Footer />
 
-          <Login/>
-
-          <NewPost/>
-
-      </main>
-
-      <Footer />
-
-    </div>
-  );
+		</div>
+	);
 }
 
 export default App;

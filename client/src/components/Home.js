@@ -8,8 +8,8 @@ export const Home = () => {
     const [photos, setPhotos] = useState([]);
 
     useEffect(() => {
-        photoService.getLatestByCategory().
-            then(result => {
+        photoService.getLatestByCategory()
+            .then(result => {
                 setPhotos(result);
             })
     }, []);

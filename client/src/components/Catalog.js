@@ -8,8 +8,8 @@ export const Catalog = () => {
     const [photos, setPhotos] = useState([]);
 
     useEffect(() => {
-        photoService.getAll().
-            then(result => {
+        photoService.getAll()
+            .then(result => {
                 setPhotos(result);
             })
     }, []);
