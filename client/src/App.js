@@ -5,7 +5,7 @@ import { Catalog } from "./components/Catalog";
 import { Register } from "./components/Register";
 import { Login } from "./components/Login";
 import { NewPost } from "./components/NewPost";
-
+import {Home} from "./components/Home";
 
 function App() {
   return (
@@ -14,6 +14,7 @@ function App() {
       <Header />
 
       <main>
+          <Home/>
 
           <Catalog/>
 

@@ -7,8 +7,8 @@ export const NewPost = () => {
                 <label htmlFor="title"><b>Title</b></label>
                 <input type="text" placeholder="Enter Name" name="title" id="title" required />
 
-                <label htmlFor="imgUrl"><b>Image URL</b></label>
-                <input type="text" placeholder="Image URL" name="imgUrl" id="imgUrl" required />
+                <label htmlFor="img"><b>Image URL</b></label>
+                <input type="text" placeholder="Image URL" name="img" id="img" required />
 
                 <label htmlFor="category"><b>Category</b></label>
                 <select id="category" name="category">

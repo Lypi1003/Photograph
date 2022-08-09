@@ -1,4 +1,18 @@
+import { useEffect, useState } from 'react';
+
+import * as photoService from '../services/photoService';
+
+
 export const Catalog = () => {
+    const [photos, setPhotos] = useState([]);
+
+    useEffect(() => {
+        photoService.getAll().
+            then(result => {
+                setPhotos(result);
+            })
+    }, []);
+
     return (
         <>
             <div className="catalog">
