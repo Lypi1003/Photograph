@@ -12,11 +12,12 @@ import { Logout } from "./components/Logout";
 import { Home } from './components/Home';
 import { NewPost } from './components/NewPost';
 import { DetailsCard } from './components/DetailsCard';
-import { useState } from 'react';
+
+import { useLocalStorage } from './hooks/useLocalStorage';
 
 
 function App() {
-	const [auth,setAuth] = useState({});
+	const [auth,setAuth] = useLocalStorage('auth',{});
 
 	const loginHandler =(authData) =>{
 		setAuth(authData);

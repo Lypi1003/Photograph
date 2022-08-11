@@ -6,12 +6,17 @@ export const login = (email, password) => post(`${baseUrl}/login`, { email, pass
 
 export const logout = async (accessToken) => {
     try {
-        await fetch(`${baseUrl}/logout`, {
+        const response = await fetch(`${baseUrl}/logout`, {
             headers: {
                 'X-Authorization': accessToken
             }
         });
+        
+        return response;
     } catch (error) {
 
     }
 }
+
+export const register =(email,password)=> 
+    post(`${baseUrl}/register`,{email,password});
