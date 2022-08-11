@@ -17,7 +17,7 @@ export const Home = () => {
     return (
         <>
             <div>
-                <h1>Latest Games in all Categories</h1>
+                <h1>Latest Photos in all Categories</h1>
             </div>
 
             <div className="catalog">

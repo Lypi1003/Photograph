@@ -8,6 +8,7 @@ import { Footer } from "./components/Footer";
 import { Catalog } from "./components/Catalog";
 import { Register } from "./components/Register";
 import { Login } from "./components/Login";
+import { Logout } from "./components/Logout";
 import { Home } from './components/Home';
 import { NewPost } from './components/NewPost';
 import { DetailsCard } from './components/DetailsCard';
@@ -20,9 +21,12 @@ function App() {
 	const loginHandler =(authData) =>{
 		setAuth(authData);
 	}
+	const logoutHandler = ()=>{
+		setAuth({});
+	}
 
 	return (
-		<AuthContext.Provider value={{auth, loginHandler}}>
+		<AuthContext.Provider value={{user:auth, loginHandler, logoutHandler}}>
 
 		<div >
 
@@ -33,6 +37,7 @@ function App() {
 					<Route path="/" element={<Home />} />
 					<Route path="/login" element={<Login />} />
 					<Route path="/register" element={<Register />} />
+					<Route path="/logout" element={<Logout />} />
 					<Route path="/catalog" element={<Catalog />} />
 					<Route path="/create" element={<NewPost />} />
 					<Route path="/catalog/:photoId" element={<DetailsCard/>} />
