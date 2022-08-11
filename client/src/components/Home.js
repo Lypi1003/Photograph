@@ -6,7 +6,7 @@ import { HomeCard } from './HomeCard';
 
 export const Home = () => {
     const [photos, setPhotos] = useState([]);
-
+    
     useEffect(() => {
         photoService.getLatestByCategory()
             .then(result => {

@@ -8,6 +8,7 @@ import { Register } from "./components/Register";
 import { Login } from "./components/Login";
 import { Home } from './components/Home';
 import { NewPost } from './components/NewPost';
+import { DetailsCard } from './components/DetailsCard';
 
 
 function App() {
@@ -22,7 +23,8 @@ function App() {
 					<Route path="/login" element={<Login />} />
 					<Route path="/register" element={<Register />} />
 					<Route path="/catalog" element={<Catalog />} />
-					<Route path="/catalog/create" element={<NewPost />} />
+					<Route path="/create" element={<NewPost />} />
+					<Route path="/catalog/:photoId" element={<DetailsCard/>} />
 
 				</Routes>
 			</main>

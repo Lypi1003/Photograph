@@ -1354,7 +1354,8 @@
                 imgUrl: "https://assets.hongkiat.com/uploads/nature-photography/autumn-poolside.jpg",
                 category: "Nature",
                 _createdOn: 1614935055353,
-                _id: "1240549d-f0e0-497e-ab99-eb8f703713d7"
+                _id: "1240549d-f0e0-497e-ab99-eb8f703713d7",
+                comments:['Great Place!']
             },
             "143e5265-333e-4150-80e4-16b61de31aa0": {
                 _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
@@ -1363,7 +1364,8 @@
                 imgUrl: "https://thumbs.dreamstime.com/b/autumn-fall-nature-scene-autumnal-park-beautiful-77869343.jpg",
                 category: "Nature",
                 _createdOn: 1614935181470,
-                _id: "143e5265-333e-4150-80e4-16b61de31aa0"
+                _id: "143e5265-333e-4150-80e4-16b61de31aa0",
+                comments:[]
             },
             "a9bae6d8-793e-46c4-a9db-deb9e3484909": {
                 _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
@@ -1372,7 +1374,8 @@
                 imgUrl: "https://upload.wikimedia.org/wikipedia/commons/c/c8/Altja_j%C3%B5gi_Lahemaal.jpg",
                 category: "Nature",
                 _createdOn: 1614935268135,
-                _id: "a9bae6d8-793e-46c4-a9db-deb9e3484909"
+                _id: "a9bae6d8-793e-46c4-a9db-deb9e3484909",
+                comments:[]
             },
             "833e0e57-71dc-42c0-b387-0ce0caf5225e": {
                 _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
@@ -1381,7 +1384,8 @@
                 imgUrl: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/2019-chevrolet-corvette-zr1-201-1527205719.jpg?crop=0.854xw:0.831xh;0.0782xw,0.0917xh&resize=640:*",
                 category: "Vechicle",
                 _createdOn: 1615033373504,
-                _id: "833e0e57-71dc-42c0-b387-0ce0caf5225e"
+                _id: "833e0e57-71dc-42c0-b387-0ce0caf5225e",
+                comments: []
             },
             "247efaa7-8a3e-48a7-813f-b5bfdad0f46c": {
                 _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
@@ -1390,7 +1394,8 @@
                 imgUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBGvQDU-msUtIhznwiuS0QR2wcEwxUoWYXGA&usqp=CAU",
                 category: "Animals",
                 _createdOn: 1615033452480,
-                _id: "247efaa7-8a3e-48a7-813f-b5bfdad0f46c"
+                _id: "247efaa7-8a3e-48a7-813f-b5bfdad0f46c",
+                comments:[]
             },
         },
         likes: {

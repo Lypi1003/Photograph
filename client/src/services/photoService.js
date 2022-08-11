@@ -9,3 +9,8 @@ export const getAll = () =>{
     return fetch(`${baseUrl}/data/photos`)
     .then(res=> res.json())
 }
+
+export const getOne = (photoId) =>{
+    return fetch(`${baseUrl}/data/photos/${photoId}`)
+    .then(res=> res.json())
+}

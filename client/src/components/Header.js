@@ -16,7 +16,7 @@ export const Header = () => {
                 <Link to="/catalog">Catalog</Link>
 
                 <div id="user">
-                    <Link to="/catalog/create">New Post</Link>
+                    <Link to="/create">New Post</Link>
                     <Link to="/profile">Profile</Link>
                     <Link to="/logout">Logout</Link>
                 </div>

@@ -14,7 +14,7 @@ export const CatalogCard = ({
             <p>{photo.description}</p>
             <p><button className=" btn">Like</button></p>
             <div className="btn">
-                <Link to="/details"> Details </Link>
+                <Link to={`/catalog/${photo._id}`}> Details</Link>
             </div>
         </div >
     );
