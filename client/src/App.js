@@ -1,4 +1,6 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom';
+
+import {AuthContext} from './contexts/AuthContext'
 
 import { Header } from "./components/Header";
 import './App.css';
@@ -9,10 +11,19 @@ import { Login } from "./components/Login";
 import { Home } from './components/Home';
 import { NewPost } from './components/NewPost';
 import { DetailsCard } from './components/DetailsCard';
+import { useState } from 'react';
 
 
 function App() {
+	const [auth,setAuth] = useState({});
+
+	const loginHandler =(authData) =>{
+		setAuth(authData);
+	}
+
 	return (
+		<AuthContext.Provider value={{auth, loginHandler}}>
+
 		<div >
 
 			<Header />
@@ -32,6 +43,7 @@ function App() {
 			<Footer />
 
 		</div>
+		</AuthContext.Provider>
 	);
 }
 
