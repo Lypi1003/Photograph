@@ -1,26 +1,47 @@
 import { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 import * as photoService from '../services/photoService';
 
 import { PhotoContext } from "../contexts/PhotoContext";
 
-export const EditPhoto =()=>{
+export const EditPhoto = () => {
     const [currentPhoto, setCurrentPhoto] = useState({});
-    const {} = useContext(PhotoContext);
-    const {photoId} = useParams();
+    const {photoEdit} = useContext(PhotoContext);
+    const { photoId } = useParams();
+    const navigate = useNavigate();
 
-    useEffect(()=>{
+    const categories = [
+        { label: "nature", value: "Nature" },
+        { label: "persons", value: "Persons" },
+        { label: "vechicle", value: "Vechicle" },
+        { label: "cities", value: "Cities" },
+        { label: "animals", value: "Animals" },
+        { label: "random", value: "Random" },
+    ]
+
+    useEffect(() => {
         photoService.getOne(photoId)
-        .then(photoData => {
-            setCurrentPhoto(photoData);
-        })
+            .then(photoData => {
+                setCurrentPhoto(photoData);
+            })
     })
+
+    const onSubmit=(e)=>{
+        e.preventDefault();
+        const photoData = Object.fromEntries(new FormData(e.target));
+       
+        photoService.edit(photoId,photoData)
+            .then(result => {
+                photoEdit(photoId,result);
+                navigate(`/catalog/${photoId}/details`)
+            });
+    }
     return (
         <div className="container">
             <form onSubmit={onSubmit}>
-                <h1>New Post</h1>
-                <p>Please fill in this form to create an new post.</p>
+                <h1>Edit Post</h1>
+               
                 <label htmlFor="title"><b>Title</b></label>
                 <input type="text" placeholder="Enter Name" name="title" id="title" defaultValue={currentPhoto.title} />
 
@@ -29,18 +50,13 @@ export const EditPhoto =()=>{
 
                 <label htmlFor="category"><b>Category</b></label>
                 <select id="category" name="category">
-                    <option value="nature">Nature</option>
-                    <option value="persons">Persons</option>
-                    <option value="vechicle">Vechicles</option>
-                    <option value="cities">Cities</option>
-                    <option value="animals">Animals</option>
-                    <option value="random">Random</option>
+                   {categories.map((category) => <option value={category.value}>{category.label}</option>)}
                 </select>
 
                 <label htmlFor="description">Description</label>
-                <textarea id="description" name="description"></textarea>
+                <textarea id="description" name="description" defaultValue={currentPhoto.description}/>
 
-                <input type="submit" class="btn" value="Create"></input>
+                <input type="submit" class="btn" value="Edit"></input>
 
             </form>
         </div>

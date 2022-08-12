@@ -1,19 +1,19 @@
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import * as photoService from '../services/photoService';
-
+import { useParams } from "react-router-dom";
 
 export const DetailsCard = () => {
-    const [photo, setPhoto] = useState([]);
+    const [photo, setPhoto] = useState({});
     const [comment, setComment] = useState({comment: ''});
-
+    const { photoId } = useParams();
 
     useEffect(() => {
-        photoService.getOne()
+        photoService.getOne(photoId)
             .then(result => {
                 setPhoto(result);
             })
-    }, []);
+    });
 
     const addCommentHandler = (e) => {
         e.preventDefault();
@@ -42,8 +42,8 @@ export const DetailsCard = () => {
             <p>{photo.description}</p>
 
             <div className="btn">
-                <Link to="/edit"> Edit </Link>
-                <Link to="/delete"> Delete </Link>
+                <Link to={`/catalog/${photo._id}/edit`}> Edit </Link>
+                <Link to={`/catalog/${photo._id}/delete`}> Delete </Link>
             </div>
 
             <div>

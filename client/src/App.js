@@ -48,13 +48,18 @@ function App() {
 
 		navigate('/catalog');
 	}
+
+	const photoEdit = (photoId, photoData)=>{
+		setPhotos(state=> state.map(x=>x._id === photoId ? photoData : x))
+	}
+
 	return (
 		<AuthContext.Provider value={{ user: auth, loginHandler, logoutHandler }}>
 
 			<div >
 
 				<Header />
-				<PhotoContext.Provider value ={{photos,newPostHandler}}>
+				<PhotoContext.Provider value ={{photos, newPostHandler, photoEdit}}>
 
 					<main>
 						<Routes>
@@ -65,7 +70,7 @@ function App() {
 							<Route path="/catalog" element={<Catalog />} />
 							<Route path="/create" element={<NewPost />} />
 							<Route path="/catalog/:photoId/edit" element={<EditPhoto />} />
-							<Route path="/catalog/:photoId" element={<DetailsCard />} />
+							<Route path="/catalog/:photoId/details" element={<DetailsCard />} />
 
 						</Routes>
 					</main>
