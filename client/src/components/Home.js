@@ -1,12 +1,14 @@
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
+
+import { HomeCard } from './HomeCard';
 
 import * as photoService from '../services/photoService';
-import { HomeCard } from './HomeCard';
+
 
 
 export const Home = () => {
+   
     const [photos, setPhotos] = useState([]);
-    
     useEffect(() => {
         photoService.getLatestByCategory()
             .then(result => {
@@ -14,6 +16,7 @@ export const Home = () => {
             })
     }, []);
 
+    
     return (
         <>
             <div>

@@ -1,31 +1,31 @@
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
-import { PhotoContext } from '../contexts/PhotoContext';
 import * as photoService from '../services/photoService';
 
-export const NewPost = () => {
-    const {newPostHandler}= useContext(PhotoContext);
+import { PhotoContext } from "../contexts/PhotoContext";
 
-    const onSubmit = (e) => {
-        e.preventDefault();
-        const photoData = Object.fromEntries(new FormData(e.target));
-       
-        photoService.create(photoData)
-            .then(result => {
-                newPostHandler(result);
-            });
-    }
+export const EditPhoto =()=>{
+    const [currentPhoto, setCurrentPhoto] = useState({});
+    const {} = useContext(PhotoContext);
+    const {photoId} = useParams();
 
+    useEffect(()=>{
+        photoService.getOne(photoId)
+        .then(photoData => {
+            setCurrentPhoto(photoData);
+        })
+    })
     return (
         <div className="container">
             <form onSubmit={onSubmit}>
                 <h1>New Post</h1>
                 <p>Please fill in this form to create an new post.</p>
                 <label htmlFor="title"><b>Title</b></label>
-                <input type="text" placeholder="Enter Name" name="title" id="title" required />
+                <input type="text" placeholder="Enter Name" name="title" id="title" defaultValue={currentPhoto.title} />
 
                 <label htmlFor="imgUrl"><b>Image URL</b></label>
-                <input type="text" placeholder="Image URL" name="imgUrl" id="imgUrl" required />
+                <input type="text" placeholder="Image URL" name="imgUrl" id="imgUrl" defaultValue={currentPhoto.imgUrl} />
 
                 <label htmlFor="category"><b>Category</b></label>
                 <select id="category" name="category">

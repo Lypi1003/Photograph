@@ -1,18 +1,13 @@
-import { useEffect, useState } from 'react';
+
+import { useContext } from 'react';
+
+import { PhotoContext } from '../contexts/PhotoContext';
 import {CatalogCard} from './CatalogCard';
 
-import * as photoService from '../services/photoService';
 
 
 export const Catalog = () => {
-    const [photos, setPhotos] = useState([]);
-
-    useEffect(() => {
-        photoService.getAll()
-            .then(result => {
-                setPhotos(result);
-            })
-    }, []);
+    const {photos}= useContext(PhotoContext);
 
     return (
         <>

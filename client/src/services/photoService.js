@@ -1,10 +1,12 @@
-import { get } from "./requester";
+import { get, post } from "./requester";
 
-const baseUrl = 'http://localhost:3030';
+const baseUrl = 'http://localhost:3030/data/photos';
 
-export const getLatestByCategory = () =>get(`${baseUrl}/data/photos?sortBy=_createdOn%20desc&distinct=category`);
+export const getLatestByCategory = () =>get(`${baseUrl}?sortBy=_createdOn%20desc&distinct=category`);
     
-export const getAll = () =>get(`${baseUrl}/data/photos`)
+export const getAll = () =>get(baseUrl);
    
 
-export const getOne = (photoId) =>get(`${baseUrl}/data/photos/${photoId}`)
+export const getOne = (photoId) =>get(`${baseUrl}/${photoId}`);
+
+export const create =(photoData) => post(baseUrl, photoData);
